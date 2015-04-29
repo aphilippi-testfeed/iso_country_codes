@@ -24,9 +24,7 @@ class IsoCountryCodes # :nodoc:
 
       if code.match(/^\d{3}$/)
         instance = all.select { |c| c.numeric == code }.first
-      elsif code.match(/^[A-Z]{2}$/)
-        instance = all.select { |c| c.alpha2 == code }.first
-      elsif code.match(/^[A-Z]{3}$/)
+      elsif code.match(/^[A-Z]{2}$/) || code.match(/^[A-Z]{3}$/) || code.match(/^[A-Z]{3}\-[A-Z]{3}$/)
         instance = all.select { |c| c.alpha3 == code }.first
       end
 
